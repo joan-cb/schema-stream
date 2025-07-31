@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
-	"schema-parser/parser"
+
+	"github.com/joan-cb/schema-stream/schemaStream"
 )
 
 func main() {
@@ -13,7 +14,7 @@ func main() {
 		return
 	}
 
-	types, err := parser.ParseAndGetTypes(jsonData)
+	types, err := schemaStream.ParseAndGetTypes(jsonData)
 	if err != nil {
 		fmt.Println("Error parsing json input:", err)
 		return
