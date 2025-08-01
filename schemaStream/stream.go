@@ -8,20 +8,25 @@ import (
 	"strings"
 )
 
-func ParseAndGetTypes(jsonData []byte) (map[string]string, error) {
-	reader := strings.NewReader(string(jsonData))
-	decoder := json.NewDecoder(reader)
+var reader *strings.Reader
+var decoder *json.Decoder
+var types []reflect.StructField
 
-	types := make(map[string]string)
-	err := analyzeJSON(decoder, "", types)
+func ParseAndGetTypes(jsonData []byte) ([]reflect.StructField, error) {
+	reader = strings.NewReader(string(jsonData))
+	decoder = json.NewDecoder(reader)
+	types = []reflect.StructField{}
+
+	err := analyzeJSON(&types)
 	if err != nil {
 		return nil, fmt.Errorf("JSON parsing error: %v", err)
 	}
 
+	log.Println("types", types)
 	return types, nil
 }
 
-func analyzeJSON(decoder *json.Decoder, path string, types map[string]string) error {
+func analyzeJSON(types *[]reflect.StructField) error {
 	token, err := decoder.Token()
 	if err != nil {
 		return err
@@ -31,100 +36,140 @@ func analyzeJSON(decoder *json.Decoder, path string, types map[string]string) er
 	if delim, ok := token.(json.Delim); ok {
 		switch delim {
 		case '{':
-			return analyzeObject(decoder, path, types)
+			return analyzeObject()
 		case '[':
-			return analyzeArray(decoder, path, types)
+			return analyzeArray()
 		}
 	}
-
-	// Handle primitive types using reflection
-	types[path] = getTypeName(token)
 	return nil
 }
 
-func getTypeName(value interface{}) string {
-	if value == nil {
-		return "null"
+func getStructField(token any) (reflect.StructField, error) {
+	if token == nil {
+		return reflect.StructField{}, nil
 	}
 
-	switch reflect.TypeOf(value).Kind() {
+	tokenName, tagName, err := returnFieldNameAndTag(token)
+	if err != nil {
+		return reflect.StructField{}, err
+	}
+	log.Println("Field name:", tokenName)
+
+	valueToken, err := decoder.Token()
+	if err != nil {
+		return reflect.StructField{}, err
+	}
+	log.Println("Value token:", valueToken)
+
+	switch reflect.TypeOf(valueToken).Kind() {
 	case reflect.String:
-		return "string"
+		return reflect.StructField{
+			Name: tokenName,
+			Type: reflect.TypeOf(""),
+			Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s"`, tagName)),
+		}, nil
 	case reflect.Bool:
-		return "bool"
+		return reflect.StructField{
+			Name: tokenName,
+			Type: reflect.TypeOf(true),
+			Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s"`, tagName)),
+		}, nil
 	case reflect.Float64, reflect.Int64:
-		return "number"
+		return reflect.StructField{
+			Name: tokenName,
+			Type: reflect.TypeOf(0.0),
+			Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s"`, tagName)),
+		}, nil
+	//TO DO: CLEAN THIS UP BELOW
 	case reflect.Map:
-		return "object"
+		log.Fatal("map")
+		return reflect.StructField{}, nil
 	case reflect.Slice:
-		return "array"
+		log.Fatal("slice")
+		return reflect.StructField{}, nil
 	default:
-		return "unknown"
+		log.Fatal("default")
+		return reflect.StructField{}, fmt.Errorf("unknown type: %v", token)
 	}
 }
 
-func analyzeObject(decoder *json.Decoder, path string, types map[string]string) error {
-
+func analyzeObject() error {
+	token, err := decoder.Token()
+	if err != nil {
+		log.Printf("analyzeObject returned error when fetching token: %s", err)
+	}
 	for {
-		token, err := decoder.Token()
-		if err != nil {
-			return err
-		}
+		if fieldName, ok := token.(string); ok {
+			// Get the value token
+			valueToken, err := decoder.Token()
+			if err != nil {
+				return err
+			}
 
-		if delim, ok := token.(json.Delim); ok && delim == '}' {
-			break
-		}
+			// Handle nested objects
+			if delim, ok := valueToken.(json.Delim); ok && delim == '{' {
+				// Skip nested object for now
+				for {
+					t, _ := decoder.Token()
+					if d, ok := t.(json.Delim); ok && d == '}' {
+						break
+					}
+				}
+				continue
+			}
 
-		key := token.(string)
-		currentPath := key
-		if path != "" {
-			currentPath = path + "." + key
-		}
-
-		if err := analyzeJSON(decoder, currentPath, types); err != nil {
-			return err
+			// Handle primitive values
+			structInstance, err := getStructField(fieldName)
+			if err != nil {
+				return err
+			}
+			types = append(types, structInstance)
 		}
 	}
+}
+
+func analyzeArray() error {
 	return nil
 }
 
-func analyzeArray(decoder *json.Decoder, path string, types map[string]string) error {
-	// Analyze first element to determine type with proper path
-	types[path] = "array"
-	firstElementPath := path + "[0]"
-	if err := analyzeJSON(decoder, firstElementPath, types); err != nil {
-		return err
+func returnFieldNameAndTag(token any) (string, string, error) {
+	if str, ok := token.(string); ok {
+		tokenName := strings.ToUpper(str[:1]) + str[1:]
+		tagName := strings.ToLower(str[:1]) + str[1:]
+		return tokenName, tagName, nil
 	}
-
-	// Skip to end of array
-	skipArray(decoder)
-
-	// Get the type from the first element and format as array
-	if firstType, exists := types[firstElementPath]; exists {
-		types[path] = "[" + firstType + "]"
-		delete(types, firstElementPath)
-	} else {
-		log.Println("Unknown type for array:", path)
-		types[path] = "[unknown]"
-	}
-
-	return nil
+	return "", "", fmt.Errorf("unexpected error: %v", token)
 }
 
-func skipArray(decoder *json.Decoder) {
-	for {
-		token, _ := decoder.Token()
-		if delim, ok := token.(json.Delim); ok && delim == ']' {
-			break
-		}
-	}
-}
+// 	// Skip to end of array
+// 	skipArray(decoder)
 
-func skipObject(decoder *json.Decoder) {
-	for {
-		token, _ := decoder.Token()
-		if delim, ok := token.(json.Delim); ok && delim == '}' {
-			break
-		}
-	}
-}
+// 	// Get the type from the first element and format as array
+// 	if firstType, exists := types[firstElementPath]; exists {
+// 		types[path] = "[" + firstType + "]"
+// 		delete(types, firstElementPath)
+// 	} else {
+// 		log.Println("Unknown type for array:", path)
+// 		types[path] = "[unknown]"
+// 	}
+
+// 	return nil
+// }
+
+// func skipArray(decoder *json.Decoder) {
+// 	for {
+// 		token, _ := decoder.Token()
+// 		if delim, ok := token.(json.Delim); ok && delim == ']' {
+// 			break
+// 		}
+// 	}
+// }
+
+// func skipObject(decoder *json.Decoder) {
+// 	for {
+// 		token, _ := decoder.Token()
+// 		if delim, ok := token.(json.Delim); ok && delim == '}' {
+// 			break
+// 		}
+// 	}
+// }
