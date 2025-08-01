@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	jsonData, err := os.ReadFile("2083.json")
+	jsonData, err := os.ReadFile("test.json")
 	if err != nil {
 		fmt.Println("Error reading JSON file:", err)
 		return

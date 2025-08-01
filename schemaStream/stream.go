@@ -3,6 +3,7 @@ package schemaStream
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"reflect"
 	"strings"
 )
@@ -63,6 +64,7 @@ func getTypeName(value interface{}) string {
 }
 
 func analyzeObject(decoder *json.Decoder, path string, types map[string]string) error {
+
 	for {
 		token, err := decoder.Token()
 		if err != nil {
@@ -87,20 +89,23 @@ func analyzeObject(decoder *json.Decoder, path string, types map[string]string) 
 }
 
 func analyzeArray(decoder *json.Decoder, path string, types map[string]string) error {
-	// Analyze first element to determine type
-	if err := analyzeJSON(decoder, path+"[0]", types); err != nil {
+	// Analyze first element to determine type with proper path
+	types[path] = "array"
+	firstElementPath := path + "[0]"
+	if err := analyzeJSON(decoder, firstElementPath, types); err != nil {
 		return err
 	}
 
 	// Skip to end of array
 	skipArray(decoder)
 
-	// Set array type based on first element
-	if firstType, exists := types[path+"[0]"]; exists {
-		types[path] = "array[" + firstType + "]"
-		delete(types, path+"[0]")
+	// Get the type from the first element and format as array
+	if firstType, exists := types[firstElementPath]; exists {
+		types[path] = "[" + firstType + "]"
+		delete(types, firstElementPath)
 	} else {
-		types[path] = "array"
+		log.Println("Unknown type for array:", path)
+		types[path] = "[unknown]"
 	}
 
 	return nil
@@ -110,6 +115,15 @@ func skipArray(decoder *json.Decoder) {
 	for {
 		token, _ := decoder.Token()
 		if delim, ok := token.(json.Delim); ok && delim == ']' {
+			break
+		}
+	}
+}
+
+func skipObject(decoder *json.Decoder) {
+	for {
+		token, _ := decoder.Token()
+		if delim, ok := token.(json.Delim); ok && delim == '}' {
 			break
 		}
 	}
