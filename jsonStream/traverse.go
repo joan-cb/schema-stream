@@ -1,4 +1,4 @@
-package schemaStream
+package jsonStream
 
 import (
 	"encoding/json"

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/joan-cb/schema-stream/schemaStream"
+	"github.com/joan-cb/schema-stream/jsonStream"
 )
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 		return
 	}
 
-	types, err := schemaStream.ReturnStructDefinition(jsonData)
+	types, err := jsonStream.ReturnStructDefinition(jsonData)
 	if err != nil {
 		fmt.Println("error parsing json input:", err)
 		return
