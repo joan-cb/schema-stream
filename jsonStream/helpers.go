@@ -1,4 +1,4 @@
-package schemaStream
+package jsonStream
 
 import (
 	"encoding/json"
@@ -88,6 +88,6 @@ func processPrimitive(tokenName, tagName string, valueToken any) reflect.StructF
 	return reflect.StructField{
 		Name: tokenName,
 		Type: reflect.TypeOf(valueToken),
-		Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s"`, tagName)),
+		Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s" jsonschema:"required"`, tagName)),
 	}
 }
