@@ -1,8 +1,19 @@
 {
+    "name": "John",
+    "age": 30,
+    "isAStudent": false,
+    "anArray": [2,3,4,4,5,5,56,6,7,8,9,10],
     "anObject": {
-        "name": "string",
-        "age": 4,
-        "isStudent": true
+        "surname": "Jane",
+        "oldage": 25,
+        "isweird": true,
+        "anotherObject": {
+            "cook": true,
+            "wfh": false,
+            "isStudent": true,
+            "aNestedArray": [1,2,3,4,5,6,7,8,9,10]
+        }
     },
-    "anArray": [1, 2, 3]
+    "anArray2": [ 1,2,3,4,5,6,7,8,9,10]
+  
 }

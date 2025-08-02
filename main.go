@@ -14,9 +14,9 @@ func main() {
 		return
 	}
 
-	types, err := schemaStream.ParseAndGetTypes(jsonData)
+	types, err := schemaStream.ReturnStructDefinition(jsonData)
 	if err != nil {
-		fmt.Println("Error parsing json input:", err)
+		fmt.Println("error parsing json input:", err)
 		return
 	}
 	for key, value := range types {
@@ -24,5 +24,8 @@ func main() {
 	}
 	// Generate the struct definition
 	fmt.Println("Generated Go struct:")
-	fmt.Println(types)
+
+	for k, v := range types {
+		fmt.Println(k, v)
+	}
 }
