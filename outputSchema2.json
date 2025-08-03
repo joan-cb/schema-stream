@@ -47,30 +47,7 @@
             ]
         },
         "orders": {
-            "items": {
-                "properties": {
-                    "orderId": {
-                        "type": "number"
-                    },
-                    "product": {
-                        "type": "string"
-                    },
-                    "quantity": {
-                        "type": "number"
-                    },
-                    "price": {
-                        "type": "number"
-                    }
-                },
-                "additionalProperties": false,
-                "type": "object",
-                "required": [
-                    "orderId",
-                    "product",
-                    "quantity",
-                    "price"
-                ]
-            },
+            "items": true,
             "type": "array"
         },
         "isActive": {
@@ -88,9 +65,7 @@
         "city",
         "email",
         "phone",
-        "anArray",
         "address",
-        "orders",
         "isActive",
         "lastLogin"
     ]
