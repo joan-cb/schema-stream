@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "city": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "anArray": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "city",
+        "state",
+        "street",
+        "zip"
+      ]
+    },
+    "orders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "integer"
+          },
+          "product": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "orderId",
+          "price",
+          "product",
+          "quantity"
+        ]
+      }
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "lastLogin": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "address",
+    "age",
+    "anArray",
+    "city",
+    "email",
+    "isActive",
+    "lastLogin",
+    "name",
+    "orders",
+    "phone"
+  ]
+}
