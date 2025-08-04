@@ -20,6 +20,27 @@ func processArray(tokenName, tagName string) (reflect.StructField, error) {
 	if delim, ok := firstElement.(json.Delim); ok && delim == ']' {
 		// Empty array
 		arrayType = reflect.TypeOf([]interface{}{})
+	} else if delim == '{' {
+		// Array of objects - need to process the object structure
+		nestedFields, err := traverseObject(firstElement)
+		if err != nil {
+			return reflect.StructField{}, err
+		}
+
+		// Create the struct type for array elements
+		elementStructType := reflect.StructOf(nestedFields)
+		arrayType = reflect.SliceOf(elementStructType)
+
+		// Skip remaining array elements
+		for {
+			token, err := decoder.Token()
+			if err != nil {
+				return reflect.StructField{}, err
+			}
+			if delim, ok := token.(json.Delim); ok && delim == ']' {
+				break
+			}
+		}
 	} else {
 		// Create array type based on first element type
 		switch firstElement.(type) {
@@ -53,7 +74,7 @@ func processArray(tokenName, tagName string) (reflect.StructField, error) {
 	return reflect.StructField{
 		Name: tokenName,
 		Type: arrayType,
-		Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s"`, tagName)),
+		Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s" jsonschema:"required"`, tagName)),
 	}, nil
 }
 
