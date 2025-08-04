@@ -3,6 +3,7 @@ package jsonStream
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"reflect"
 	"strings"
 )
@@ -107,8 +108,44 @@ func processObject(tokenName, tagName string, valueToken any) (reflect.StructFie
 
 func processPrimitive(tokenName, tagName string, valueToken any) reflect.StructField {
 	return reflect.StructField{
-		Name: tokenName,
+		Name: sanitizeTokenName(tokenName),
 		Type: reflect.TypeOf(valueToken),
 		Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s" jsonschema:"required"`, tagName)),
 	}
+}
+
+func sanitizeTokenName(key string) string {
+	if key == "" {
+		log.Println("Warning: Empty key provided, returning default name.")
+		return "unamedField"
+	}
+
+	// Capitalize first letter
+	sanitizedToken := strings.ToUpper(key[:1]) + key[1:]
+
+	// Replace invalid characters with underscores
+	invalidChars := []string{"-", " ", ".", ",", ":", ";", "!", "?", "@", "#", "$", "%", "^", "&", "*", "(", ")", "[", "]", "{", "}", "|", "\\", "/", "<", ">", "=", "+", "~", "`", "'", "\""}
+	for _, char := range invalidChars {
+		sanitizedToken = strings.ReplaceAll(sanitizedToken, char, "_")
+	}
+
+	// Remove multiple consecutive underscores
+	for strings.Contains(sanitizedToken, "__") {
+		sanitizedToken = strings.ReplaceAll(sanitizedToken, "__", "_")
+	}
+
+	// Remove leading/trailing underscores
+	sanitizedToken = strings.Trim(sanitizedToken, "_")
+
+	// Ensure it starts with a letter
+	if sanitizedToken == "" || !isLetter(rune(sanitizedToken[0])) {
+		sanitizedToken = "Field" + sanitizedToken
+	}
+
+	return sanitizedToken
+}
+
+// isLetter checks if a rune is a letter
+func isLetter(r rune) bool {
+	return (r >= 'a' && r <= 'z') || (r >= 'A' && r <= 'Z')
 }

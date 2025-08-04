@@ -20,7 +20,7 @@ A command-line tool that automatically generates JSON schemas from JSON document
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone 
 cd schema-stream
 ```
 
