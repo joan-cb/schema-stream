@@ -80,7 +80,7 @@ func processObject(tokenName, tagName string, valueToken any) (reflect.StructFie
 	return reflect.StructField{
 		Name: tokenName,
 		Type: nestedStructType,
-		Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s"`, tagName)),
+		Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s" jsonschema:"required"`, tagName)),
 	}, nil
 }
 

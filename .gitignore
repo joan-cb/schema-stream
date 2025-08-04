@@ -2,3 +2,6 @@
 .cursorrules
 schema.json
 test.json
+outputSchema.json
+output_schema.json
+.cursor

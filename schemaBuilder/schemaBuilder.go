@@ -13,7 +13,6 @@ func ReturnSchemaFromStructFields(structFields []reflect.StructField) *jsonschem
 	reflector := &jsonschema.Reflector{
 		AllowAdditionalProperties:  false,
 		RequiredFromJSONSchemaTags: true,
-		DoNotReference:             true, // Don't use $ref, inline everything
 	}
 
 	schema := reflector.Reflect(concreteStructInstance)
