@@ -10,11 +10,10 @@ import (
 	"strings"
 )
 
-var reader *strings.Reader
 var decoder *json.Decoder
 
 func ReturnStructDefinition(jsonData []byte) ([]reflect.StructField, error) {
-	reader = strings.NewReader(string(jsonData))
+	reader := strings.NewReader(string(jsonData))
 	decoder = json.NewDecoder(reader)
 
 	outerStruct, err := traverseJSON()

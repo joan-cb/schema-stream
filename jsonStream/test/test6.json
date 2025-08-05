@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-08-05T09:50:52.016608Z",
+  "level": "WARN",
+  "service": "ufnvm-service",
+  "trace_id": "imsqhbhlwroxdgjunaskwyiybemvrlei",
+  "payload": {
+    "gvdmrs": true,
+    "ubzswl": false,
+    "erdyzr": [
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+}

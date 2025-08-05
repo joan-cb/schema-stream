@@ -1,0 +1,35 @@
+{
+    "name": "BrightSky Analytics",
+    "founded": 2018,
+    "isPublic": false,
+    "anArray": true,
+    "anObject": {
+        "key1": "value1",
+        "key2": "value2"
+    },
+    "anObjectWithNestedProperties": {
+        "nestedKey1": "nestedValue1",
+        "nestedKey2": {
+            "subKey1": "subValue1",
+            "subKey2": true
+        }
+    },
+    "anArrayWithObjects":[
+        {
+            "id": 1,
+            "name": "Object One",
+            "details": {
+                "description": "This is the first object",
+                "tags": ["tag1", "tag2"]
+            }
+        },
+        {
+            "id": 2,
+            "name": "Object Two",
+            "details": {
+                "description": "This is the second object",
+                "tags": ["tag3", "tag4"]
+            }
+        }
+    ]
+}

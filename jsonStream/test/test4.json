@@ -1,0 +1,123 @@
+{
+  "timestamp": "2025-08-05T09:50:52.015792Z",
+  "level": "INFO",
+  "service": "iunri-service",
+  "trace_id": "ugvmczhupvsxucaydvshoglbdufszekq",
+  "payload": {
+    "zlidco": [
+      {
+        "wsfaxo": true,
+        "iwfdjq": {
+          "garnpu": [
+            0.7185421711694542,
+            0.7185421711694542,
+            0.7185421711694542
+          ],
+          "gwkkbt": [
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "wsfaxo": true,
+        "iwfdjq": {
+          "garnpu": [
+            0.7185421711694542,
+            0.7185421711694542,
+            0.7185421711694542
+          ],
+          "gwkkbt": [
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "wsfaxo": true,
+        "iwfdjq": {
+          "garnpu": [
+            0.7185421711694542,
+            0.7185421711694542,
+            0.7185421711694542
+          ],
+          "gwkkbt": [
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "wsfaxo": true,
+        "iwfdjq": {
+          "garnpu": [
+            0.7185421711694542,
+            0.7185421711694542,
+            0.7185421711694542
+          ],
+          "gwkkbt": [
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "wsfaxo": true,
+        "iwfdjq": {
+          "garnpu": [
+            0.7185421711694542,
+            0.7185421711694542,
+            0.7185421711694542
+          ],
+          "gwkkbt": [
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      }
+    ],
+    "ksyrwc": [
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ]
+    ],
+    "fshxju": [
+      0.7270352367285796,
+      0.7270352367285796,
+      0.7270352367285796,
+      0.7270352367285796,
+      0.7270352367285796
+    ]
+  }
+}

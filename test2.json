@@ -1,0 +1,49 @@
+{
+    "name": "Alice",
+    "age": 30,
+    "isActive": true,
+    "address": {
+      "street": "123 Main St",
+      "city": "Metropolis",
+      "coordinates": {
+        "latitude": 40.7128,
+        "longitude": -74.0060
+      }
+    },
+    "contacts": [
+      {
+        "type": "email",
+        "value": "alice@example.com"
+      },
+      {
+        "type": "phone",
+        "value": "+1-202-555-0191"
+      }
+    ],
+    "preferences": {
+      "notifications": {
+        "email": true,
+        "sms": false,
+        "push": {
+          "enabled": true,
+          "frequency": "daily"
+        }
+      },
+      "theme": "dark"
+    },
+    "projects": [
+      {
+        "name": "Project X",
+        "status": "active",
+        "tasks": [
+          { "title": "Design UI", "completed": false },
+          { "title": "Write specs", "completed": true }
+        ]
+      },
+      {
+        "name": "Project Y",
+        "status": "archived",
+        "tasks": []
+      }
+    ]
+  }  
