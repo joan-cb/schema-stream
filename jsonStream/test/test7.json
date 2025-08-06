@@ -1,194 +1,32 @@
 {
-  "timestamp": "2025-08-05T09:50:52.016715Z",
-  "level": "WARN",
-  "service": "lankc-service",
-  "trace_id": "fyeeufjozerqkkatlrhwwfoggllpygpq",
+  "timestamp": "2025-08-05T13:35:14.068029Z",
+  "level": "ERROR",
+  "service": "qmhow-service",
+  "trace_id": "aurojabzitunrbzjcaxpvmclryuqmtwk",
   "payload": {
-    "huorpb": {
-      "cxkita": {
-        "gyrnyg": 8,
-        "jvyhsy": "svshac",
-        "bbqodb": "jwjhiv",
-        "tofxlc": [
-          [
-            "arvslt",
-            "arvslt",
-            "arvslt"
-          ],
-          [
-            "arvslt",
-            "arvslt",
-            "arvslt"
-          ]
-        ],
-        "ecaixe": [
-          {
-            "rkhcak": "itndrz"
-          },
-          {
-            "rkhcak": "itndrz"
-          }
-        ]
-      },
-      "enwhmg": 528,
-      "oteaoi": 0.7529902964938192,
-      "yyvlvk": {
-        "sbzyrb": 109,
-        "xpukgf": [
-          [
-            true,
-            true
-          ],
-          [
-            true,
-            true
-          ]
-        ],
-        "vhqdzn": null,
-        "wiwzjo": null,
-        "gyhzot": 0.3439783337892761,
-        "jtcxue": {
-          "fqcsvo": null,
-          "udqlfa": {
-            "ymhxkr": null
-          },
-          "uudamg": true
-        }
-      },
-      "czaqpe": 994,
-      "htytnp": [
-        {
-          "kyeoaw": {
-            "zktdra": null
-          },
-          "psrqek": true,
-          "mijoti": {
-            "rtiunw": false,
-            "qeqzir": null
-          }
-        },
-        {
-          "kyeoaw": {
-            "zktdra": null
-          },
-          "psrqek": true,
-          "mijoti": {
-            "rtiunw": false,
-            "qeqzir": null
-          }
-        },
-        {
-          "kyeoaw": {
-            "zktdra": null
-          },
-          "psrqek": true,
-          "mijoti": {
-            "rtiunw": false,
-            "qeqzir": null
-          }
-        }
+    "drhfxd": true,
+    "juvlvm": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "zknffs": [
+      [
+        0.5622311155334028,
+        0.5622311155334028,
+        0.5622311155334028
       ],
-      "tcsink": {
-        "rcmtrg": "cdekxq",
-        "sqgvti": 366,
-        "mxohmy": [
-          true,
-          true,
-          true,
-          true
-        ],
-        "fzruwz": {
-          "crlrfw": [
-            "cxfzan",
-            "cxfzan",
-            "cxfzan"
-          ]
-        },
-        "vnjbnc": [
-          {
-            "fwacjn": true,
-            "vcigbo": 0.6921933466186575
-          },
-          {
-            "fwacjn": true,
-            "vcigbo": 0.6921933466186575
-          },
-          {
-            "fwacjn": true,
-            "vcigbo": 0.6921933466186575
-          },
-          {
-            "fwacjn": true,
-            "vcigbo": 0.6921933466186575
-          }
-        ],
-        "licdzz": 583
-      },
-      "nwyvfc": [
-        [
-          317,
-          317,
-          317,
-          317
-        ],
-        [
-          317,
-          317,
-          317,
-          317
-        ],
-        [
-          317,
-          317,
-          317,
-          317
-        ],
-        [
-          317,
-          317,
-          317,
-          317
-        ]
+      [
+        0.5622311155334028,
+        0.5622311155334028,
+        0.5622311155334028
+      ],
+      [
+        0.5622311155334028,
+        0.5622311155334028,
+        0.5622311155334028
       ]
-    },
-    "wekqlt": "oxxywa",
-    "phrkcb": {
-      "vpbcbl": {
-        "zaxxdt": true
-      },
-      "nwqtea": 463,
-      "pbvqdv": {
-        "mhnnyn": "kfzcag"
-      },
-      "rhkldf": {
-        "ypmgta": null
-      },
-      "aiwsmh": false,
-      "adbvlj": 0.4980388431065791,
-      "yezila": [
-        {
-          "bqhala": {
-            "jhecce": "mdgmbn",
-            "bcacqb": 0.2569089932286318
-          }
-        },
-        {
-          "bqhala": {
-            "jhecce": "mdgmbn",
-            "bcacqb": 0.2569089932286318
-          }
-        },
-        {
-          "bqhala": {
-            "jhecce": "mdgmbn",
-            "bcacqb": 0.2569089932286318
-          }
-        }
-      ],
-      "hyhnov": {
-        "ekiwgr": true,
-        "uuqbxi": null
-      }
-    }
+    ]
   }
 }

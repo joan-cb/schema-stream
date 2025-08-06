@@ -22,8 +22,7 @@ def random_primitive():
         random.random(),
         random_string(),
         True,
-        False,
-        None
+        False
     ])
 
 def random_array(depth, mixed):

@@ -1,226 +1,231 @@
 {
-  "timestamp": "2025-08-05T09:50:52.017029Z",
-  "level": "ERROR",
-  "service": "ldnxn-service",
-  "trace_id": "sfqmuyjpxsgmdkkilwtnkdkkduqbhdbz",
+  "timestamp": "2025-08-05T13:35:14.068142Z",
+  "level": "WARN",
+  "service": "dlzfb-service",
+  "trace_id": "idcvgcdjdpjriqsaksjukakfhmsliqpg",
   "payload": {
-    "havzyp": [
-      {
-        "ttrhgy": [
-          "uulfxu",
-          "uulfxu",
-          "uulfxu"
-        ],
-        "ipodrz": {
-          "ctazoz": {
-            "incdvm": true,
-            "wdvbau": false
-          },
-          "bcuvrw": [
-            false,
-            false,
-            false
-          ],
-          "gzqsxu": 870,
-          "bfnzdb": 0.19645546036568817
-        },
-        "maevtb": {
-          "esqzoh": {
-            "mcwsrs": 219,
-            "qelyfs": 0.21188273335560126
-          },
-          "gohsoc": true,
-          "uhzbiu": true
+    "qvvmoc": 0.9944308769042576,
+    "rjadxh": {
+      "okydln": {
+        "gsgvts": false,
+        "hznuyu": {
+          "kxoeew": 274,
+          "peadfz": {
+            "dmgrba": 737
+          }
         }
       },
-      {
-        "ttrhgy": [
-          "uulfxu",
-          "uulfxu",
-          "uulfxu"
-        ],
-        "ipodrz": {
-          "ctazoz": {
-            "incdvm": true,
-            "wdvbau": false
-          },
-          "bcuvrw": [
-            false,
-            false,
-            false
+      "ienehy": [
+        {
+          "ebgvnx": [
+            0.5086536634073582,
+            0.5086536634073582
           ],
-          "gzqsxu": 870,
-          "bfnzdb": 0.19645546036568817
+          "qeuvpx": false
         },
-        "maevtb": {
-          "esqzoh": {
-            "mcwsrs": 219,
-            "qelyfs": 0.21188273335560126
-          },
-          "gohsoc": true,
-          "uhzbiu": true
+        {
+          "ebgvnx": [
+            0.5086536634073582,
+            0.5086536634073582
+          ],
+          "qeuvpx": false
+        },
+        {
+          "ebgvnx": [
+            0.5086536634073582,
+            0.5086536634073582
+          ],
+          "qeuvpx": false
         }
-      }
-    ],
-    "ytozhi": {
-      "xbccxk": {
-        "nwooew": [
+      ],
+      "dbsofb": {
+        "yqlomk": [
           [
-            "dkqpua",
-            "dkqpua"
+            213,
+            213
           ],
           [
-            "dkqpua",
-            "dkqpua"
-          ],
-          [
-            "dkqpua",
-            "dkqpua"
-          ],
-          [
-            "dkqpua",
-            "dkqpua"
-          ],
-          [
-            "dkqpua",
-            "dkqpua"
+            213,
+            213
           ]
         ],
-        "qlfekm": {
-          "gxvghj": 52,
-          "bhbafh": {
-            "ndjjdk": null
-          },
-          "zvhbcr": {
-            "digads": true
-          },
-          "znmmob": {
-            "bfdjbp": false
-          }
+        "yxfaem": [
+          0.5979446932963547,
+          0.5979446932963547,
+          0.5979446932963547
+        ],
+        "njfmwl": 270,
+        "ioocxt": [
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false,
+            false
+          ]
+        ],
+        "denhcj": {
+          "wtnmjl": [
+            false,
+            false
+          ]
         },
-        "zxtwwr": false,
-        "ipjscf": [
-          {
-            "fwzfqf": null
-          },
-          {
-            "fwzfqf": null
-          },
-          {
-            "fwzfqf": null
-          },
-          {
-            "fwzfqf": null
-          },
-          {
-            "fwzfqf": null
-          }
+        "ollwys": {
+          "tutdah": [
+            "ftbnmn",
+            "ftbnmn",
+            "ftbnmn",
+            "ftbnmn"
+          ],
+          "buxyfn": true
+        }
+      },
+      "ofwzhx": {
+        "bryixj": [
+          true,
+          true,
+          true,
+          true,
+          true
         ]
       },
-      "madjoq": null,
-      "wrsckj": true,
-      "skctvx": [
+      "ggofyb": {
+        "vscvpn": {
+          "hdpqyt": true
+        },
+        "othrxm": [
+          [
+            "powkxr",
+            "powkxr",
+            "powkxr",
+            "powkxr"
+          ],
+          [
+            "powkxr",
+            "powkxr",
+            "powkxr",
+            "powkxr"
+          ],
+          [
+            "powkxr",
+            "powkxr",
+            "powkxr",
+            "powkxr"
+          ],
+          [
+            "powkxr",
+            "powkxr",
+            "powkxr",
+            "powkxr"
+          ],
+          [
+            "powkxr",
+            "powkxr",
+            "powkxr",
+            "powkxr"
+          ]
+        ],
+        "rkyrdv": [
+          false,
+          false
+        ],
+        "qkaqua": {
+          "ienisv": [
+            "qutggl",
+            "qutggl",
+            "qutggl"
+          ],
+          "rgiuye": {
+            "bjgoou": 118
+          }
+        },
+        "jqzfhg": false
+      },
+      "xqfeqx": [
         [
-          null,
-          null,
-          null
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          },
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          },
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          },
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          }
         ],
         [
-          null,
-          null,
-          null
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          },
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          },
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          },
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          }
         ],
         [
-          null,
-          null,
-          null
-        ],
-        [
-          null,
-          null,
-          null
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          },
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          },
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          },
+          {
+            "cxwnep": false,
+            "ulwpik": 0.17592755609959176
+          }
         ]
-      ]
+      ],
+      "jvvqbc": true
     },
-    "jqamkk": [
-      [
-        {
-          "ljtgtv": [
-            null,
-            null
-          ],
-          "hkzkyl": null,
-          "otqaqy": {
-            "kipize": false,
-            "ysuwbg": 0.1529354029876655
-          },
-          "xhgtec": null
-        },
-        {
-          "ljtgtv": [
-            null,
-            null
-          ],
-          "hkzkyl": null,
-          "otqaqy": {
-            "kipize": false,
-            "ysuwbg": 0.1529354029876655
-          },
-          "xhgtec": null
-        }
-      ],
-      [
-        {
-          "ljtgtv": [
-            null,
-            null
-          ],
-          "hkzkyl": null,
-          "otqaqy": {
-            "kipize": false,
-            "ysuwbg": 0.1529354029876655
-          },
-          "xhgtec": null
-        },
-        {
-          "ljtgtv": [
-            null,
-            null
-          ],
-          "hkzkyl": null,
-          "otqaqy": {
-            "kipize": false,
-            "ysuwbg": 0.1529354029876655
-          },
-          "xhgtec": null
-        }
-      ],
-      [
-        {
-          "ljtgtv": [
-            null,
-            null
-          ],
-          "hkzkyl": null,
-          "otqaqy": {
-            "kipize": false,
-            "ysuwbg": 0.1529354029876655
-          },
-          "xhgtec": null
-        },
-        {
-          "ljtgtv": [
-            null,
-            null
-          ],
-          "hkzkyl": null,
-          "otqaqy": {
-            "kipize": false,
-            "ysuwbg": 0.1529354029876655
-          },
-          "xhgtec": null
-        }
-      ]
+    "pbziva": [
+      598,
+      598,
+      598
     ]
   }
 }

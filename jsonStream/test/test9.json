@@ -1,15 +1,174 @@
 {
-  "timestamp": "2025-08-05T09:50:52.017331Z",
-  "level": "INFO",
-  "service": "gbucq-service",
-  "trace_id": "oyqfmwfshvcaarmuemtleemvlfvnfhjy",
+  "timestamp": "2025-08-05T13:35:14.068448Z",
+  "level": "ERROR",
+  "service": "kxzit-service",
+  "trace_id": "vzzphljqmbfmaaotrxvmqowrafsjvhro",
   "payload": {
-    "guhljs": null,
-    "ccvjzn": "ulttzk",
-    "gwmmxv": [
-      923,
-      923,
-      923
-    ]
+    "dntjnl": [
+      [
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        }
+      ],
+      [
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        }
+      ],
+      [
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        }
+      ],
+      [
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        }
+      ],
+      [
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        },
+        {
+          "oobbro": false,
+          "olexeq": true
+        }
+      ]
+    ],
+    "zqmltk": {
+      "yfixbt": {
+        "loxfcv": {
+          "ttidmo": "adppmg",
+          "ygwukr": {
+            "ccvujn": false
+          },
+          "qnxznk": 0.06130155030771289
+        }
+      },
+      "lqkuso": [
+        {
+          "rbqyhe": 283
+        },
+        {
+          "rbqyhe": 283
+        },
+        {
+          "rbqyhe": 283
+        },
+        {
+          "rbqyhe": 283
+        },
+        {
+          "rbqyhe": 283
+        }
+      ],
+      "jesyjt": 0.21700831483488503,
+      "qxzzyt": [
+        "xjbhdh",
+        "xjbhdh",
+        "xjbhdh",
+        "xjbhdh",
+        "xjbhdh"
+      ],
+      "slnsxg": [
+        [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      ]
+    },
+    "hwqvig": 864
   }
 }

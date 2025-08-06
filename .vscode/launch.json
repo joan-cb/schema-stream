@@ -1,12 +1,32 @@
 {
     "configurations": [
+
         {
             "mode": "local",
             "name": "Attach to Process",
             "processId": 0,
             "request": "attach",
             "type": "go"
-        }
+        },
+        {
+            "name": "Launch Go CLI",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/", // path to your main package
+            "args": ["--your-flag", "value"],          // CLI arguments
+            "showLog": true
+          },
+          {
+            "name": "Debug Go CLI (Interactive)",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/main.go", // or your CLI entry point
+            "args": [],
+            "console": "integratedTerminal", // 👈 This is the key part!
+            "showLog": true
+          }
     ],
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.

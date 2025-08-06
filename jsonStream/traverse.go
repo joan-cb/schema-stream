@@ -12,6 +12,9 @@ import (
 
 var decoder *json.Decoder
 
+// to do add global to access current token
+//pass decoder in each func
+
 func ReturnStructDefinition(jsonData []byte) ([]reflect.StructField, error) {
 	reader := strings.NewReader(string(jsonData))
 	decoder = json.NewDecoder(reader)
@@ -38,9 +41,8 @@ func traverseJSON() ([]reflect.StructField, error) {
 		}
 		return []reflect.StructField{}, errors.New("The JSON document contains an array as a root level item, which is not supported.")
 	case '{':
-		structFields, err := traverseObject(token)
+		structFields, err := traverseObject()
 		if err != nil {
-			return nil, fmt.Errorf("JSON parsing error: %v", err)
 		}
 		return structFields, nil
 	default:
@@ -48,7 +50,7 @@ func traverseJSON() ([]reflect.StructField, error) {
 	}
 }
 
-func traverseObject(token any) ([]reflect.StructField, error) {
+func traverseObject() ([]reflect.StructField, error) {
 	innerStruct := []reflect.StructField{}
 
 	for {
@@ -82,7 +84,7 @@ func traverseObject(token any) ([]reflect.StructField, error) {
 		if delim, ok := valueToken.(json.Delim); ok {
 			switch delim {
 			case '{':
-				objectField, err := processObject(tokenName, tagName, valueToken)
+				objectField, err := processObject(tokenName, tagName)
 				if err != nil {
 					return nil, err
 				}

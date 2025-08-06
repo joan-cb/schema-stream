@@ -1,13 +1,298 @@
 {
-  "timestamp": "2025-08-05T09:50:52.015088Z",
-  "level": "DEBUG",
-  "service": "znncw-service",
-  "trace_id": "oaibisitekvwqgzkwpegrfvsapgwacpx",
+  "timestamp": "2025-08-05T13:35:14.066284Z",
+  "level": "INFO",
+  "service": "zftbg-service",
+  "trace_id": "vmweawdismjuqdccqonhlxabtlohknbf",
   "payload": {
-    "hjrzrv": 970,
-    "crykec": {
-      "mlemuk": false
+    "frylqv": {
+      "chiskn": [
+        [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ],
+        [
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ],
+          [
+            true,
+            true
+          ]
+        ]
+      ],
+      "sqyhvw": {
+        "gfwctw": 0.13271758702330094,
+        "cpvvhj": [
+          {
+            "ddgnmz": "pauzvj",
+            "ceccmw": "ufsduz"
+          },
+          {
+            "ddgnmz": "pauzvj",
+            "ceccmw": "ufsduz"
+          }
+        ],
+        "joiboz": [
+          194,
+          194,
+          194
+        ],
+        "ufnvce": {
+          "nyuhhj": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "hubfnr": 787
+        },
+        "mgqtcv": {
+          "anbkub": [
+            545,
+            545
+          ]
+        },
+        "hkwweu": false
+      },
+      "toxhrc": [
+        "actymv",
+        "actymv",
+        "actymv",
+        "actymv",
+        "actymv"
+      ],
+      "wozgpr": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "wiemxb": [
+        [
+          {
+            "tdelca": 220,
+            "mplaki": 19
+          },
+          {
+            "tdelca": 220,
+            "mplaki": 19
+          },
+          {
+            "tdelca": 220,
+            "mplaki": 19
+          }
+        ],
+        [
+          {
+            "tdelca": 220,
+            "mplaki": 19
+          },
+          {
+            "tdelca": 220,
+            "mplaki": 19
+          },
+          {
+            "tdelca": 220,
+            "mplaki": 19
+          }
+        ]
+      ],
+      "gwsjcn": false,
+      "ntbglb": [
+        [
+          {
+            "qwsfgr": "dtlgjg"
+          },
+          {
+            "qwsfgr": "dtlgjg"
+          },
+          {
+            "qwsfgr": "dtlgjg"
+          },
+          {
+            "qwsfgr": "dtlgjg"
+          }
+        ],
+        [
+          {
+            "qwsfgr": "dtlgjg"
+          },
+          {
+            "qwsfgr": "dtlgjg"
+          },
+          {
+            "qwsfgr": "dtlgjg"
+          },
+          {
+            "qwsfgr": "dtlgjg"
+          }
+        ],
+        [
+          {
+            "qwsfgr": "dtlgjg"
+          },
+          {
+            "qwsfgr": "dtlgjg"
+          },
+          {
+            "qwsfgr": "dtlgjg"
+          },
+          {
+            "qwsfgr": "dtlgjg"
+          }
+        ]
+      ],
+      "lskonh": true
     },
-    "rjfcfk": "wrsiii"
+    "ilkjtk": [
+      {
+        "zoxftj": {
+          "obhbht": {
+            "xjmaen": false,
+            "ystsod": 289
+          },
+          "lbkewp": false,
+          "wohbcr": true
+        },
+        "opmyae": {
+          "zoryvh": [
+            0.9280181390193559,
+            0.9280181390193559,
+            0.9280181390193559,
+            0.9280181390193559
+          ]
+        }
+      },
+      {
+        "zoxftj": {
+          "obhbht": {
+            "xjmaen": false,
+            "ystsod": 289
+          },
+          "lbkewp": false,
+          "wohbcr": true
+        },
+        "opmyae": {
+          "zoryvh": [
+            0.9280181390193559,
+            0.9280181390193559,
+            0.9280181390193559,
+            0.9280181390193559
+          ]
+        }
+      },
+      {
+        "zoxftj": {
+          "obhbht": {
+            "xjmaen": false,
+            "ystsod": 289
+          },
+          "lbkewp": false,
+          "wohbcr": true
+        },
+        "opmyae": {
+          "zoryvh": [
+            0.9280181390193559,
+            0.9280181390193559,
+            0.9280181390193559,
+            0.9280181390193559
+          ]
+        }
+      },
+      {
+        "zoxftj": {
+          "obhbht": {
+            "xjmaen": false,
+            "ystsod": 289
+          },
+          "lbkewp": false,
+          "wohbcr": true
+        },
+        "opmyae": {
+          "zoryvh": [
+            0.9280181390193559,
+            0.9280181390193559,
+            0.9280181390193559,
+            0.9280181390193559
+          ]
+        }
+      }
+    ],
+    "yfoljs": true
   }
 }
