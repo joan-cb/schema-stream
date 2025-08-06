@@ -7,7 +7,11 @@ import (
 	"log"
 	"reflect"
 	"strings"
+
+	"github.com/Microsoft/go-winio/pkg/process"
 )
+
+var previousToken json.Token
 
 type tokenType int
 
@@ -20,47 +24,78 @@ const (
 	tokenNumber
 	tokenBool
 	tokenNull
+	unexpectedToken
 )
 
-// can remove for loop as this will go in the  handle object or handle array
-func traverseOuterObject() ([]reflect.StructField, error) {
-	outerStruct := []reflect.StructField{}
-	for {
-		token, err := decoder.Token()
-		if err != nil {
-			if err == io.EOF {
+func dispatchFirstToken(outerStruct *[]reflect.StructField)  error {
+	
+	
+	if err != nil {
+		if err == io.EOF {
 				return outerStruct, nil
 			}
-			return nil, fmt.Errorf("JSON parsing error: %v", err)
+		return nil, fmt.Errorf("JSON parsing error: %v", err)
+	}
+	if delim, ok := token.(json.Delim); ok && delim == '{' {
+		err = handleArray(outerStruct)
+		if err != nil{
+			return err
 		}
-		
-		if delim, ok := token.(json.Delim); ok {
-			switch delim {
-			case '{':
-				return handleObject(&outerStruct)
-			case '[':
-				return handleArray( &outerStruct)
-			default:
-				return fmt.Errorf("unexpected delimiter: %v", delim)
-			}
-		}
-	}	
-}
-
-  
-
-func handleObject(*[]reflect.StructField) error {
-	innerStruct := reflect.StructField{}
-	nextToken, err := decoder.Token()
-	if err != nil {
-		return err
 	}
 
-
 	return nil
+}	
+
+
+func udpatepreviousToken(token json.Token){
+	previousToken = token
 }
 
-func handleArray(outerStruct *[]reflect.StructField) error {
+
+
+
+func handleObject(outerStruct *[]reflect.StructField, decoder *json.Decoder) error {
+	nextToken, err := decoder.Token()
+	udpatepreviousToken(token)
+	
+	tokenType, err := returnTokenType(tokenType)
+	if err != nil{
+		return  err
+	}
+	 switch tokenType{
+	 case tokenString:
+		handleString(outerStruct,decoder)
+	 case  tokenOpenSquareBracket:
+		handleArray(outerStruct, decoder)
+	 default:
+		return errors.New(fmt.Sprintf("unexpected token type for first token, expect [ or {. Got %v", token))
+	}
+	return  nil
+}
+
+
+func handleString(outerStruct *[]reflect.StructField, decoder *json.Decoder) error {	
+	nextToken, err := decoder.Token()
+	udpatepreviousToken(token)
+		
+	tokenType, err := returnTokenType(tokenType)
+	if err != nil{
+		return  err
+	}
+	switch tokenType{
+	case tokenString:
+		handleString(outerStruct,decoder)
+	case  tokenOpenSquareBracket:
+		handleArray(outerStruct, decoder)
+	default:
+		return errors.New(fmt.Sprintf("unexpected token type for first token, expect [ or {. Got %v", token))
+	}
+	return  nil
+}
+
+
+
+func handleArray(outerStruct *[]reflect.StructField, decode *json.Decoder) error {
 	innerStruct := reflect.StructField{}
 
 	nextToken, err := decoder.Token()
@@ -110,16 +145,35 @@ func returnFieldNameAndTag(token any) (string, string, error) {
 	return "", "", fmt.Errorf("unexpected token type: %T", token)
 }
 
- 
+
+func processObject (token *json.Token, outerStruct *[]reflect.StructField, decoder *json.Decoder) error {
+	innerStruct := []reflect.StructField{}
+	for{
+		token, err :=decode.Token()
+		if err!=nil {
+			return err
+		}
+		udpateCurrentToken(token)
+		err = processPrimitive(token, outerStruct,decoder)
+		if err !=nil {
+			return err
+		}
+		innerStruct = append(innerStruct, )
+		}
+
+	}
+}
 
 
+func processPrimitive(token *json.Token, outerStruct *[]reflect.StructField, decoder *json.Decoder) error  {
+	tokenName, tagName, err := returnFieldNameAndTag(previousToken)
+	if err !=nil {
+		return err 
+	}
 
-
-
-func processPrimitive(tokenName, tagName string, valueToken any) (reflect.StructField, error) {
 	return reflect.StructField{
 		Name: sanitizeTokenName(tokenName),
-		Type: reflect.TypeOf(valueToken),
+		Type: reflect.TypeOf(token),
 		Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s" jsonschema:"required"`, tagName)),
 	}, nil
 }
